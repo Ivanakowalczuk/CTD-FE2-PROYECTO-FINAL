@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { NombresSimpsons, INFO_SIMPSONS } from "./constants";
-import styles from "./styles.module.css";
+import { BioContainer, BioDescripcion, BioImagen, BioNombre, BotonBioActivo, ContenedorBotones } from "./styled";
 
 const Bio = () => {
   const [bioActiva, setBioActiva] = useState(
@@ -12,37 +12,36 @@ const Bio = () => {
 
   const crearBotones = () => {
     return Object.keys(INFO_SIMPSONS).map((nombre: string) => (
-      <button
-        key={nombre as string}
+      <BotonBioActivo
+         key={nombre as string}
         onClick={() => onClick(nombre as NombresSimpsons)}
-        className={
-          bioActiva.id === nombre
-            ? styles.botonBioActivo
-            : styles.botonBioInactivo
-        }
-      >
+        activo= {bioActiva.id === nombre ? false : true}
+      
+        >
+      
         {nombre}
-      </button>
+        </BotonBioActivo>
     ));
   };
 
   return (
-    <div className={styles.bioContainer}>
-      <div className={styles.contenedorBotones}>{crearBotones()}</div>
+    <BioContainer>
+     <ContenedorBotones>{crearBotones()}</ContenedorBotones>
       <div>
         <div>
-          <img
-            src={bioActiva.image}
-            alt={bioActiva.nombre}
-            className={styles.bioImagen}
-          />
+          <BioImagen 
+          src={bioActiva.image}
+          alt={bioActiva.nombre}>
+          </BioImagen>
+         
         </div>
         <div>
-          <h3 className={styles.bioNombre}>{bioActiva.nombre}</h3>
-          <p className={styles.bioDescripcion}>{bioActiva.descripcion}</p>
+          <BioNombre>{bioActiva.nombre}</BioNombre>
+          <BioDescripcion>{bioActiva.descripcion}</BioDescripcion>
+         
         </div>
       </div>
-    </div>
+      </BioContainer>
   );
 };
 

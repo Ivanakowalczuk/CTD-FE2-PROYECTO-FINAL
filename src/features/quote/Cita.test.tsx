@@ -1,6 +1,7 @@
 import {screen, waitFor, fireEvent} from '@testing-library/react' 
 import { render } from '../../test-utils';
 import Cita from './Cita'
+import userEvent from '@testing-library/user-event';
 
 
 
@@ -44,10 +45,6 @@ test('Search Character', async() => {
   fireEvent.click(buttonGetCita)
 
 });
-
-
-
-
 
 
 test('delete input value with button click', () => {
