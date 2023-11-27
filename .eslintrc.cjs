@@ -31,5 +31,18 @@ module.exports = {
         "react"
     ],
     "rules": {
-    }
+        '@typescript-eslint/explicit-module-boundary-types': 'off',
+        'react/react-in-jsx-scope': 'off',
+        'no-useless-catch': 'off',
+        'react/jsx-key': 'off',
+        'prefer-const': ['error', {
+            destructuring: 'any',
+            ignoreReadBeforeAssign: false,
+          }],
+    },
+    "settings": {
+        react: {
+          version: 'detect',
+        },
+      },
 }

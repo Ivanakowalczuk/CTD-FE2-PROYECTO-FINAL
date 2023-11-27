@@ -44,7 +44,7 @@ export const Input = styled.input`
   font-family: "Homer Simpson Revised", sans-serif;
 `;
 
-export const Boton = styled.button<{ secondary?: boolean }>`
+export const Boton = styled.button<{secondary?:boolean}>`
   width: 45%;
   min-width: 250px;
   height: 50px;
