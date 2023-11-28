@@ -5,7 +5,7 @@ import { configureStore } from "@reduxjs/toolkit";
 import { Provider } from "react-redux";
 // import citaReducer from "./features/quote/citaSlice";
 import { RootState } from "./app/store";
-import citaSlice from "./features/quote/citaSlice";
+import citaReducer from "./features/quote/citaSlice";
 // import citaSlice from "./features/quote/citaSlice";
 
 // Creamos el custom render
@@ -15,7 +15,7 @@ const customRender = (
     preloadedState,
     store = configureStore({
       reducer: {
-        cita: citaSlice,
+        cita: citaReducer,
       },
       preloadedState,
     }),

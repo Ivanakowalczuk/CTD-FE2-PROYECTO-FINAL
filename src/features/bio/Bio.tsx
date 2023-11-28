@@ -15,7 +15,7 @@ const Bio = () => {
       <BotonBioActivo
          key={nombre as string}
         onClick={() => onClick(nombre as NombresSimpsons)}
-        activo= {bioActiva.id === nombre ? false : true}
+        activo= {bioActiva.id === nombre ? true : false}
       
         >
       

@@ -43,16 +43,7 @@ export const BotonBioActivo = styled.button<{activo?:boolean}>`
 ${(props) =>
     props.activo
       ? css`
-            border-radius: 5px;
-            border: 1px solid darkgray;
-            box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
-            padding: 1rem;
-            margin: 1rem;
-            font-family: "Homer Simpson Revised", sans-serif;
-            font-size: 1.4rem;
-        `
-      : css`
-            border-radius: 5px;
+             border-radius: 5px;
             border: 1px solid darkgray;
             box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
             padding: 1rem;
@@ -64,6 +55,15 @@ ${(props) =>
             text-shadow: 2px 2px 0 #000000, 2px -2px 0 #000000, -2px 2px 0 #000000,
                 -2px -2px 0 #000000, 2px 0px 0 #000000, 0px 2px 0 #000000,
                 -2px 0px 0 #000000, 0px -2px 0 #000000;
+        `
+      : css`
+          border-radius: 5px;
+          border: 1px solid darkgray;
+          box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.75);
+          padding: 1rem;
+          margin: 1rem;
+          font-family: "Homer Simpson Revised", sans-serif;
+          font-size: 1.4rem;
         `}
 `;
 
