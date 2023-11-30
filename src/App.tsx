@@ -2,7 +2,7 @@ import React from "react";
 import Cita from "./features/quote/Cita";
 import "./App.css";
 import Bio from "./features/bio/Bio";
-import Noticias from "./features/news/Noticias";
+import ListadoDeNoticias from "./features/news/ListadoDeNoticas";
 
 function App() {
   return (
@@ -19,8 +19,9 @@ function App() {
         <Bio />
       </section>
       <section className="App-news">
-        <Noticias />
+        <ListadoDeNoticias/>
       </section>
+
     </div>
   );
 }

@@ -1,21 +1,6 @@
-export interface INoticias {
-  id: number;
-  titulo: string;
-  descripcion: string;
-  fecha: Date;
-  esPremium: boolean;
-  imagen: string;
-}
+import { simularTiempoTranscurrido } from "./utils";
 
-const simularTiempoTranscurrido: (decrementMiliseconds: number) => Date = (
-  decrementMiliseconds
-) => {
-  const time = new Date();
-  time.setMilliseconds(time.getMilliseconds() - decrementMiliseconds);
-  return time;
-};
-
-const data = [
+export const data = [
   {
     id: 1,
     titulo: "Los Simpson 'predijeron' escasez de combustible",
@@ -62,10 +47,4 @@ const data = [
   },
 ];
 
-export const obtenerNoticias: () => Promise<INoticias[]> = async () => {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(data);
-    }, 1000);
-  });
-};
+console.log(data)
