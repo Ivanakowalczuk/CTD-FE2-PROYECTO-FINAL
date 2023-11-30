@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks/useDispatch";
 import { obtenerListadoDeNoticias} from "./noticiasSlice";
 import {  
      ContenedorNoticias, 
@@ -12,11 +12,9 @@ import TarjetaDeNoticia from "./component/TarjetaDeNoticia";
 const ListadoDeNoticias = () => {
   const dispatch = useAppDispatch();
   const { listaDeNoticias } = useAppSelector((state) => state.noticias);
-  console.log(listaDeNoticias)
-
+  
   useEffect(() => {
     dispatch(obtenerListadoDeNoticias());
-
   }, []);
 
   return (

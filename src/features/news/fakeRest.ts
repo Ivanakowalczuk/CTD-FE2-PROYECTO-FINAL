@@ -1,4 +1,4 @@
-import { simularTiempoTranscurrido } from "./utils";
+import { simularMinutosTranscurridos } from "./utils";
 
 export const data = [
   {
@@ -12,7 +12,7 @@ export const data = [
     maletero de su coche con 1,000 galones de combustible para ganar un juguete promocional para su hija Maggie.`,
     imagen:
       "https://i2-prod.mirror.co.uk/incoming/article25142408.ece/ALTERNATES/s615b/0_SIMPSONSJPG.jpg",
-    fecha: simularTiempoTranscurrido(300000),
+    fecha: simularMinutosTranscurridos(300000),
     esPremium: false,
     fuente:
       "https://www.mirror.co.uk/tv/tv-news/simpsons-fans-convinced-show-predicted-25140770",
@@ -25,7 +25,7 @@ export const data = [
     en el servicio de suscripción.`,
     imagen:
       "https://i2-prod.mirror.co.uk/incoming/article24436503.ece/ALTERNATES/n310p/0_DISNEY.jpg",
-    fecha: simularTiempoTranscurrido(1200000),
+    fecha:  simularMinutosTranscurridos(1200000),
     esPremium: false,
     fuente:
       "https://www.mirror.co.uk/tv/tv-news/simpsons-teams-up-marvel-exciting-24435616",
@@ -40,11 +40,11 @@ export const data = [
     expresar su sorpresa ya que la serie había previsto otro gran evento.`,
     imagen:
       "https://i2-prod.mirror.co.uk/incoming/article24547200.ece/ALTERNATES/s615b/0_EHP_CHP_160721The-Simpsons_53631JPG.jpg",
-    fecha: simularTiempoTranscurrido(1200000),
+    fecha:  simularMinutosTranscurridos(1200000),
     esPremium: true,
     fuente:
       "https://www.mirror.co.uk/tv/tv-news/simpsons-correctly-predicts-future-again-24547074",
   },
 ];
 
-console.log(data)
+

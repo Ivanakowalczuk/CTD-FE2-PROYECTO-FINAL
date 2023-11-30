@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { useAppSelector } from "../../../app/hooks";
+import { useAppSelector } from "../../../app/hooks/useDispatch";
 import { INoticiasNormalizadas } from "../types";
 import {
    CloseButton,
@@ -10,17 +10,15 @@ import {
   TarjetaModal,
   TituloModal,
 } from "../styled";
-import { SuscribeImage, CloseButton as Close } from "../../../assets";
-import BotonParaSuscribir from "./BotonSuscribir";
+import {  CloseButton as Close, SuscribeImage } from "../../../assets";
+import BotonSuscripcion from "./BotonSuscripcion";
 
-//El modal recibe las props de la noticia y el toggle 
+//Aquí realizo el modal en un componente que recibe las props de la noticia y el toggle 
 
 interface IProps {
   noticia: INoticiasNormalizadas;
   toggle: () => void;
 }
-
-
 
 const Modal: FC<IProps> = ({ noticia, toggle }) => {
   const dataModel= {
@@ -41,14 +39,14 @@ const Modal: FC<IProps> = ({ noticia, toggle }) => {
   return (
     <ContenedorModal>
       <TarjetaModal>
-        <CloseButton aria-label="close-modal" onClick={() => toggle()}>
+        <CloseButton aria-label="close-modal" onClick={toggle}>
           <img src={Close} alt="close-button" />
         </CloseButton>
         <ImagenModal src={src} alt={alt} />
         <ContenedorTexto>
           <TituloModal>{titulo}</TituloModal>
           <DescripcionModal>{descripcion}</DescripcionModal>
-          <BotonParaSuscribir noticia={noticia}/>
+          <BotonSuscripcion noticia={noticia}/>
          </ContenedorTexto>
       </TarjetaModal>
     </ContenedorModal>

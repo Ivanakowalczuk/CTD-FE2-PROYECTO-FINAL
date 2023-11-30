@@ -9,7 +9,7 @@ import {
   obtenerCitaDeLaAPI,
 } from "./citaSlice";
 import { obtenerMensaje } from "./utils";
-import { useAppDispatch, useAppSelector } from "../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../app/hooks/useDispatch";
 
 function Cita() {
   const [valorInput, setValorInput] = useState("");

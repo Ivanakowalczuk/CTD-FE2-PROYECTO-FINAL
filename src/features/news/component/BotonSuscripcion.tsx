@@ -1,16 +1,17 @@
 import { FC } from "react";
-import { useAppDispatch, useAppSelector } from "../../../app/hooks";
+import { useAppDispatch, useAppSelector } from "../../../app/hooks/useDispatch";
 import { adquirirSuscripcionPremium } from "../noticiasSlice";
 import { INoticiasNormalizadas } from "../types";
 import { BotonSuscribir } from "../styled";
 
 
-//realizo el botón de suscripción como componente
-const BotonParaSuscribir: FC<{ noticia: INoticiasNormalizadas }> = ({ noticia }) => {
+//Aquí realizo el botón de suscripción como componente
+
+const BotonSuscripcion: FC<{ noticia: INoticiasNormalizadas }> = ({ noticia }) => {
   const dispatch = useAppDispatch();
   const { idListaPremium } = useAppSelector((state) => state.noticias);
 
-  const onClickSubscribe = () => {
+  const suscribir = () => {
     dispatch(adquirirSuscripcionPremium(noticia.id));
     setTimeout(() => {
       alert("¡Suscrito!");
@@ -20,7 +21,7 @@ const BotonParaSuscribir: FC<{ noticia: INoticiasNormalizadas }> = ({ noticia })
   return (
     <>
       {!idListaPremium.some((id) => id === noticia.id) && (
-        <BotonSuscribir aria-label="suscribe-button" onClick={onClickSubscribe}>
+        <BotonSuscribir aria-label="suscribe-button" onClick={suscribir}>
           Suscríbete
         </BotonSuscribir>
       )}
@@ -28,4 +29,4 @@ const BotonParaSuscribir: FC<{ noticia: INoticiasNormalizadas }> = ({ noticia })
   );
 };
 
-export default BotonParaSuscribir;
+export default BotonSuscripcion;

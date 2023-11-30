@@ -1,13 +1,15 @@
+
 import {
-  ESTADO_FETCH,
   NOMBRE_INVALIDO,
   MENSAJE_CARGANDO,
   NO_ENCONTRADO,
+  ESTADO_FETCH,
 } from "./constants";
 
 export const obtenerMensaje: (
   cita: string,
   estadoPedido: ESTADO_FETCH
+
 ) => string = (cita, estadoPedido) => {
   if (estadoPedido === ESTADO_FETCH.CARGANDO) {
     return MENSAJE_CARGANDO;
